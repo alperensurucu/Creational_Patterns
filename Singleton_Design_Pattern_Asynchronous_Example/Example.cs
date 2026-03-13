@@ -13,9 +13,13 @@ namespace Singleton_Design_Pattern_Asynchronous_Example
         {
             Console.WriteLine($"{nameof(Example)} object created.");     
         }
+        static Example()
+        {
+                _example = new Example();  // burada da 3. yöntem static ctor içinden ürettirirsin lack a falan gerek kalmaz .
+        }
         static Example _example;
-        static object _obj = new object();  //for using lock
-        public static Example GetInstane
+        //static object _obj = new object();  //for using lock
+        public static Example GetInstane()
         {
             #region firs singleton design pattern yöntemi
 
@@ -28,18 +32,19 @@ namespace Singleton_Design_Pattern_Asynchronous_Example
             //    return _example;
             //}
             #endregion
+            return _example;
 
             #region Second singleton design pattern 
 
+            //lock (_obj)
+            //{
+            //    if (_example == null)
+            //    {
+            //        _example = new Example();
+            //    }
+            //    return _example;
+            //}
             #endregion
-            lock (_obj)
-            {
-                if (_example == null)
-                {
-                    _example = new Example();
-                }
-                return _example;
-            }
         }
     }
 }
