@@ -4,10 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Example example = Example.GetInstane;
-            Example example1 = Example.GetInstane;
-            Example example2 = Example.GetInstane;
-            Example example3 = Example.GetInstane;
+            var t1 = Task.Run(() => { Example example = Example.GetInstane; });
+            var t2 = Task.Run(() => { Example example = Example.GetInstane; });
+            var t3 = Task.Run(() => { Example example = Example.GetInstane; });
+            var t4 = Task.Run(() => { Example example = Example.GetInstane; });
+            var t5 = Task.Run(() => { Example example = Example.GetInstane; });
         }
     }
 
