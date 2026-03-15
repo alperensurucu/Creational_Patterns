@@ -7,6 +7,7 @@
             var mssql = Database.GetInstance("MSSQL");
             mssql.ConnectionString("sdfsfdsgfsdasdasdasdasdasdsadas");
             mssql.Connection();
+
             var oracle = Database.GetInstance("Oracle");
             var mongoDB = Database.GetInstance("MongoDB");
         }
