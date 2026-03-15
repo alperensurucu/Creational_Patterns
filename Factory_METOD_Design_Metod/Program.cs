@@ -29,7 +29,6 @@
     {
         void Run();
     }
-    #region Concrete Products 
     class A : IProduct
     {
         public void Run()
@@ -77,4 +76,3 @@
         }
     }
 }
-
